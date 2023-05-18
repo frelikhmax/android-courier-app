@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Courier</string>
+    <string name="main_button_text">click me</string>
+    <string name="main_button_clicked">hey you</string>
+    <string name="company">Company</string>
+    <string name="package_type">Package Type</string>
+    <string name="source_address">Source Address</string>
+    <string name="destination_address">Dest Address</string>
+    <string name="price">Price</string>
+</resources>
