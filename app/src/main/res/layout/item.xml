@@ -5,50 +5,45 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/companyTV"
         android:layout_width="85dp"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/packageTypeTV"
         android:layout_width="85dp"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/sourceAddressTV"
         android:layout_width="85dp"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/destinationAddressTV"
         android:layout_width="85dp"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="3dp"
         android:id="@+id/priceTV"
         android:layout_width="50dp"
         android:layout_height="80dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textStyle="bold" />
 
 </LinearLayout>

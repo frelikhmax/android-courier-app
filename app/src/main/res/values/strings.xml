@@ -7,4 +7,6 @@
     <string name="source_address">Source Address</string>
     <string name="destination_address">Dest Address</string>
     <string name="price">Price</string>
+    <string name="clean">Clean</string>
+    <string name="ok">Ok</string>
 </resources>

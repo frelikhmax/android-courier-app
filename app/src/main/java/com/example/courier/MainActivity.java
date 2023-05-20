@@ -1,17 +1,18 @@
 package com.example.courier;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("LOG!!!!!!!!!!!", "ON CREATE() !!!!!!!!!!!!!");
         super.onCreate(savedInstanceState);
-
 
         Courier courier = new Courier("Курьеров Курьер Курьерович", "Водитель");
 
@@ -41,11 +42,6 @@ public class MainActivity extends AppCompatActivity {
                         "Измайловский пр-т, д. 73/2", 700)
         };
 
-        ArrayList<Boolean> areClicked = new ArrayList<>();
-        for (int i = 0; i < orders.length; ++i) {
-            areClicked.add(false);
-        }
-
 
         setContentView(R.layout.activity_main);
 
@@ -55,48 +51,68 @@ public class MainActivity extends AppCompatActivity {
 
         mainLV = (ListView) findViewById(R.id.mainLV);
         OrderAdapter orderAdapter = new OrderAdapter(this, orders);
+
         mainLV.setAdapter(orderAdapter);
+        mainLV.setOnItemClickListener((parent, view, position, id) -> {
 
-        mainLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int color = ContextCompat.getColor(getApplicationContext(), R.color.onClicked);
-                int backColor = ContextCompat.getColor(getApplicationContext(), R.color.backgroundDown);
-                if (areClicked.get(position)) {
-                    courier.getOrders().remove((Order) parent.getAdapter().getItem(position));
-                    view.setBackgroundColor(backColor);
-                    areClicked.set(position, false);
-                } else {
+            TypedValue typedValue = new TypedValue();
+            getTheme().resolveAttribute(android.R.attr.colorPressedHighlight, typedValue, true);
+            int colorOnClicked = typedValue.data;
+
+            TypedValue typedValue1 = new TypedValue();
+            getTheme().resolveAttribute(android.R.attr.background, typedValue1, true);
+            int colorInitial = typedValue1.data;
+
+
+            Drawable background = view.getBackground();
+
+            if (background instanceof ColorDrawable) {
+                Log.d("a", "a");
+                int backgroundColor = ((ColorDrawable) background).getColor();
+                if (backgroundColor == colorInitial) {
                     courier.getOrders().add((Order) parent.getAdapter().getItem(position));
-                    view.setBackgroundColor(color);
-                    areClicked.set(position, true);
+                    view.setBackgroundColor(colorOnClicked);
+                } else {
+                    courier.getOrders().remove((Order) parent.getAdapter().getItem(position));
+                    view.setBackgroundColor(colorInitial);
                 }
-
-
+            } else {
+                Log.d("b", "b");
+                int backgroundColor = view.getDrawingCacheBackgroundColor();
+                if (backgroundColor == colorInitial) {
+                    courier.getOrders().add((Order) parent.getAdapter().getItem(position));
+                    view.setBackgroundColor(colorOnClicked);
+                } else {
+                    courier.getOrders().remove((Order) parent.getAdapter().getItem(position));
+                    view.setBackgroundColor(colorInitial);
+                }
             }
+
+
         });
         Button clean_button = findViewById(R.id.clean_button);
         clean_button.setOnClickListener(v -> {
+            TypedValue typedValue1 = new TypedValue();
+            getTheme().resolveAttribute(android.R.attr.background, typedValue1, true);
+            int colorInitial = typedValue1.data;
             for (int i = 0; i < mainLV.getChildCount(); ++i) {
                 View listItem = mainLV.getChildAt(i);
-                listItem.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.backgroundDown));
+
+                listItem.setBackgroundColor(colorInitial);
             }
             courier.getOrders().clear();
         });
 
         Button ok_button = findViewById(R.id.ok_button);
-        ok_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int sum = 0;
-                for (Order order : courier.getOrders()) {
-                    sum += order.getPrice();
-                }
-                if (sum > 0) {
-                    Toast.makeText(MainActivity.this, String.valueOf(sum), Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "No orders", Toast.LENGTH_LONG).show();
-                }
+        ok_button.setOnClickListener(v -> {
+            int sum = 0;
+            for (Order order : courier.getOrders()) {
+                sum += order.getPrice();
+            }
+            if (sum > 0) {
+                Toast.makeText(MainActivity.this, String.valueOf(sum), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, "No orders", Toast.LENGTH_SHORT).show();
             }
         });
 

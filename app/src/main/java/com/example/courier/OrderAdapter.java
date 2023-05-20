@@ -1,5 +1,6 @@
 package com.example.courier;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,8 @@ import androidx.annotation.Nullable;
 
 public class OrderAdapter extends ArrayAdapter<Order> {
 
-    private Context context;
-    private Order[] orders;
+    private final Context context;
+    private final Order[] orders;
 
     public OrderAdapter(Context context, Order[] orders) {
         super(context, R.layout.item, orders);
@@ -25,7 +26,8 @@ public class OrderAdapter extends ArrayAdapter<Order> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.item, parent, false);
+        @SuppressLint("ViewHolder") View view = inflater.inflate(R.layout.item, parent, false);
+
         TextView companyName = (TextView) view.findViewById(R.id.companyTV);
         companyName.setText(this.orders[position].getCompany().getName());
 
@@ -42,9 +44,5 @@ public class OrderAdapter extends ArrayAdapter<Order> {
         price.setText(String.valueOf(this.orders[position].getPrice()));
 
         return view;
-
-
-
-
     }
 }
