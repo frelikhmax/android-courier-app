@@ -1,7 +1,7 @@
 # Android Application for Courier/Android-приложение для курьера
 
 <div align="center" style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/frelikhmax/android-courier-app/assets/112934628/3e199695-87e9-4281-8c29-a9d6c822ffd7" alt="User Interface, eng" width="324">
+    <img src="https://github.com/frelikhmax/android-courier-app/assets/112934628/6a6fad19-7653-430a-98ae-3d4417689418" alt="User Interface, eng" width="324">
     <img src="https://github.com/frelikhmax/android-courier-app/assets/112934628/3dac18bf-8abb-4adb-bae5-2ba05f414c49" alt="User Interface, rus" width="324">
 </div>
 
@@ -17,6 +17,7 @@ This Android application is designed to help couriers efficiently manage their w
 - **Selected Orders List Clearance:** If a courier wants to clear the list of selected orders, they can simply click the "CLEAN" button.
 
 This application streamlines the courier's workflow, making it easier to track income and manage orders effectively.
+- Dark Theme implemented.
 
 <br/>
   
@@ -31,3 +32,4 @@ This application streamlines the courier's workflow, making it easier to track i
 - **Очистка списка выбранных заказов:** Если курьер хочет очистить список выбранных заказов, он может нажать кноку "CLEAN".
 
 Это приложение оптимизирует рабочий процесс курьера и упрощает отслеживание его дохода.
+- Реализована тёмная тема
