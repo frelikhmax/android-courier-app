@@ -19,7 +19,7 @@ This Android application is designed to help couriers efficiently manage their w
 - **Selected Orders List Clearance:** If a courier wants to clear the list of selected orders, they can simply click the "CLEAN" button.
 
 ### Key Features
-- **Dark Theme:** Dark Theme's Implementation
+- **Dark Theme:** Dark Theme's Implementation.
 <br/>
 
 ### Описание  
@@ -36,4 +36,4 @@ This Android application is designed to help couriers efficiently manage their w
 - **Очистка списка выбранных заказов:** Если курьер хочет очистить список выбранных заказов, он может нажать кноку "CLEAN".
 
 ### Ключевые функции
-- **Тёмная тема:** Реализаци Тёмной темы
+- **Тёмная тема:** Реализация Тёмной темы.
