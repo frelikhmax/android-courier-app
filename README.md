@@ -6,8 +6,10 @@
 </div>
 
 
-This Android application is designed to help couriers efficiently manage their work. It provides the following features:
+### Description
+This Android application is designed to help couriers efficiently manage their work.
 
+### Features
 - **User Profile:** At the top of the screen, the courier's full name and bank card number, where income from work is received, are displayed.
 
 - **Order List:** Below the user profile, a list of available orders of different types is presented. Couriers can select multiple orders by tapping on them.
@@ -16,12 +18,14 @@ This Android application is designed to help couriers efficiently manage their w
 
 - **Selected Orders List Clearance:** If a courier wants to clear the list of selected orders, they can simply click the "CLEAN" button.
 
-This application streamlines the courier's workflow, making it easier to track income and manage orders effectively.
-- Dark Theme implemented.
-
+### Key Features
+- **Dark Theme:** Dark Theme's Implementation
 <br/>
-  
+
+### Описание  
 Это Android-приложение разработано для оптимизации работы курьера.
+
+### Функции
 
 - **Профиль пользователя:** В верхней части экрана отображается Ф.И.О. курьера и номер банковской карты, на которую поступает доход от работы.
 
@@ -31,5 +35,5 @@ This application streamlines the courier's workflow, making it easier to track i
 
 - **Очистка списка выбранных заказов:** Если курьер хочет очистить список выбранных заказов, он может нажать кноку "CLEAN".
 
-Это приложение оптимизирует рабочий процесс курьера и упрощает отслеживание его дохода.
-- Реализована тёмная тема
+### Ключевые функции
+- **Тёмная тема:** Реализаци Тёмной темы
