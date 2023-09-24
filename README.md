@@ -1,7 +1,7 @@
 # Android Application for Courier/Android-приложение для курьера
 
 <div align="center" style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/frelikhmax/android-courier-app/assets/112934628/6a6fad19-7653-430a-98ae-3d4417689418" alt="User Interface, eng" width="324">
+    <img src="https://github.com/frelikhmax/android-courier-app/assets/112934628/a314e129-fad4-40b6-92db-a2f38399b264" alt="User Interface, eng" width="324">
     <img src="https://github.com/frelikhmax/android-courier-app/assets/112934628/3dac18bf-8abb-4adb-bae5-2ba05f414c49" alt="User Interface, rus" width="324">
 </div>
 
